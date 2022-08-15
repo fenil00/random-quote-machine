@@ -1,0 +1,24 @@
+
+#container {
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+
+#quote-box {
+    background-color: white;
+    width: 800px;
+    height: 300px;
+}
+
+#author {
+    padding-left: 650px;
+}
+
+#new-quote {
+    margin-left: 650px;
+    color: white;
+}
