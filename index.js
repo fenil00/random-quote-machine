@@ -1,6 +1,7 @@
 const newQuoteButton = document.querySelector("#new-quote");
-const quoteText = document.querySelector('h2');
+const quoteText = document.querySelector("#text");
 const quoteAuthor = document.querySelector("#author");
+const tweetQuote = document.querySelector("#tweet-quote");
 
 newQuoteButton.addEventListener('click', async function(){
     await loadQuote();
@@ -10,6 +11,11 @@ window.addEventListener('load', async function(){
     await loadQuote();
 });
 
+tweetQuote.addEventListener('click',function(){
+    tweetQuote.setAttribute('href',  "https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=" +
+      encodeURIComponent('"' + quoteText.innerText + '" ' + quoteAuthor.innerText));
+})
+
 const loadQuote = async function(){
     const randomcolor = randomColor();
     document.body.style.backgroundColor = randomcolor;
@@ -18,7 +24,7 @@ const loadQuote = async function(){
 
     const content = await fetchQuote();
     
-    quoteText.innerText = "\"" + content.content;
+    quoteText.innerText =  content.content;
     quoteAuthor.innerText = "- " + content.author;
 
 };

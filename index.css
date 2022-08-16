@@ -4,7 +4,6 @@
     height: 100vh;
     justify-content: center;
     align-items: center;
-    position: relative;
 }
 
 
@@ -12,13 +11,19 @@
     background-color: white;
     width: 800px;
     height: 300px;
+    display: flex;
+    flex-direction: column;
 }
 
 #author {
-    padding-left: 650px;
+    font-size: 1em;
 }
 
 #new-quote {
-    margin-left: 650px;
+    font-size: 1em;
     color: white;
+}
+
+#new-tweet {
+    
 }
