@@ -2,7 +2,8 @@ const newQuoteButton = document.querySelector("#new-quote");
 const quoteText = document.querySelector("#text");
 const quoteAuthor = document.querySelector("#author");
 const tweetQuote = document.querySelector("#tweet-quote");
-
+const newTweet = document.querySelector("#new-tweet");
+ 
 newQuoteButton.addEventListener('click', async function(){
     await loadQuote();
 });
@@ -17,16 +18,40 @@ tweetQuote.addEventListener('click',function(){
 })
 
 const loadQuote = async function(){
-    const randomcolor = randomColor();
-    document.body.style.backgroundColor = randomcolor;
-    quoteText.style.color = randomcolor;
-    newQuoteButton.style.backgroundColor = randomcolor;
 
     const content = await fetchQuote();
     
     quoteText.innerText =  content.content;
     quoteAuthor.innerText = "- " + content.author;
 
+    const randomcolor = randomColor();
+    //document.body.style.backgroundColor = randomcolor;
+    //quoteText.style.color = randomcolor;
+    //newQuoteButton.style.backgroundColor = randomcolor;
+    //newTweet.style.backgroundColor = randomcolor;
+
+    $("body").animate(
+        {
+          backgroundColor:randomcolor
+        },
+        1000
+      );
+
+    $("button").animate(
+        {
+          backgroundColor:randomcolor,
+          color:"white"
+        },
+        1000
+      );
+      $("#text, #author").animate(
+        {
+          color:randomcolor
+        },
+        500
+      );
+
+    
 };
 
 const fetchQuote = async function() {
