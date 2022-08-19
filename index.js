@@ -21,14 +21,10 @@ const loadQuote = async function(){
 
     const content = await fetchQuote();
     
-    quoteText.innerText =  content.content;
+    quoteText.innerText =  "\"" + content.content + "\"";
     quoteAuthor.innerText = "- " + content.author;
 
     const randomcolor = randomColor();
-    //document.body.style.backgroundColor = randomcolor;
-    //quoteText.style.color = randomcolor;
-    //newQuoteButton.style.backgroundColor = randomcolor;
-    //newTweet.style.backgroundColor = randomcolor;
 
     $("body").animate(
         {

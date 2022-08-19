@@ -17,11 +17,13 @@
     border-radius: 10px;
 }
 
-#text {
+#quote-text {
+    display: flex;
     font-size: 24px;
+    justify-content: center;
+    text-align: center;
     padding-left: 10px;
     padding-right: 10px;
-    text-align: center;
 }
 
 #quote-author{
